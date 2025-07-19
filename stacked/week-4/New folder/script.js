@@ -5,11 +5,23 @@
 // sayHello();
 // ===========================================================================================================
 
-// 2. დაწერეთ ფუნქცია, სახელად greet, რომელიც პარამეტრა მიიღებს სახელს და დაპრინტავს - "გამარჯობა, [სახელი]"
+// 2. დაწერეთ ფუნქცია, სახელად greet, რომელიც პარამეტრად მიიღებს სახელს და დაპრინტავს - "გამარჯობა, [სახელი]"
 // function greet(name) {
 //   console.log(`Hello, ${name}`);
 // }
 // greet("Alex");
+
+// function greet(name) {
+//   if (!name) {
+//     return "გამარჯობა, უცნობო";
+//   }
+//   return `გამარჯობა, ${name}`;
+// }
+
+// function greet(name = "უცნობო") {
+//   return `გამარჯობა, ${name}`;
+// }
+// console.log(greet("AlgoUni"));
 // ===========================================================================================================
 
 // 3. დაწერეთ ფუნქცია, სახელად sum, რომელიც არგუმენტებად მიიღებს ორ რიცხვს და დააბრუნებს მათ ჯამს.
@@ -56,6 +68,31 @@
 // };
 
 // console.log(bigNumber3(10, 20));
+
+// function declaration
+
+// function max(a, b) {
+//   if (a > b) {
+//     return a;
+//   }
+//   return b;
+//   return a > b ? a : b;
+//   return Math.max(a, b);
+// }
+
+// function expression
+/*
+const max = function (a, b) {
+  return a > b ? a : b;
+};
+*/
+
+// arrow function
+/*
+const max = (a, b) => (a > b ? a : b);
+*/
+
+// console.log(max(-15, 10));
 // ===========================================================================================================
 
 // 6. დაწერეთ ფუქნცია, რომელიც პარამეტრად მიიღებს იმ რაოდენობას, რამდენჯერად უნდა გამოკონსოლდეს "Hello, World".
@@ -167,3 +204,65 @@
 // };
 // polyndrome(userPrompt);
 // ===========================================================================================================
+
+// 12. დაწერეთ ფუნქცია, რომელიც მომხმარებელს შეეკითხება, რომ გამოიცნოს რანდომული საიდუმლო რიცხვი
+// 0-დან 100-მდე მანამ სანამ სწორად არ გამოიცნობს მომხმარებელი. თუ შემოყვანილი რიცხვი საიდუმლო რიცხვზე მეტია,
+//  უნდა დავუკონსოლოთ "Too High", ხოლო თუ ნაკლებია - "Too Low".
+// გამოცნობის შემთხვევაში უნდა დავპრინტოთ "You got it!" და
+//  დავაბრუნოთ რიცხვი.
+
+// let generateRandomNumber = Math.trunc(Math.random() * 100);
+
+// function guess(randomNmunber) {
+//   let userAnswer;
+//   do {
+//     userAnswer = Number(prompt("Enter number from 0 to 100"));
+
+//     if (userAnswer < 0 || userAnswer > 100) {
+//       console.log("Enter correct number!");
+//       continue;
+//     }
+//     if (userAnswer > randomNmunber) {
+//       console.log("Too Low");
+//     } else if (userAnswer < randomNmunber) {
+//       console.log("Too high");
+//     } else {
+//       console.log("You got it!");
+//     }
+//   } while (userAnswer !== randomNmunber);
+// }
+// guess(generateRandomNumber);
+
+// let answer = Number(prompt("Enter number from 1 to 10"));
+
+// do {
+//   if (answer > 10 || answer < 0) {
+//     answer = Number(prompt("Enter correct number!"));
+//   }
+//   answer = Number(prompt("Try again"));
+// } while (answer !== 5);
+
+// console.log("Congrats!");
+
+// ============================ Mentors Choice ============================== \\
+
+// const generateRandomNumber = () => Math.floor(Math.random() * 100);
+
+// function guess() {
+//   let randomNumber = generateRandomNumber();
+//   let userNumber;
+//   do {
+//     userNumber = Number(prompt("Enter the number: "));
+//     if (userNumber < 0 || userNumber >= 100) {
+//       console.log("Wrong number range");
+//     } else if (userNumber > randomNumber) {
+//       console.log("Too High, try lower");
+//     } else if (userNumber < randomNumber) {
+//       console.log("Too Low, try higher");
+//     } else {
+//       console.log(`You Got it, random number was ${randomNumber}`);
+//     }
+//   } while (userNumber !== randomNumber);
+// }
+
+// guess();
