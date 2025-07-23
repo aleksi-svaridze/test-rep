@@ -5,7 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body style="background: black">
+  <body style="background: black; color: white">
+    <div id="root">
+      <ol></ol>
+    </div>
     <script src="./script.js"></script>
+    <script>
+      const person = {
+        hobies: ["swimming", "eating", "drinking", "pooping"],
+        "my foo": "function",
+      };
+
+      person.age = 43;
+      person.name = "Alex";
+      person.foo = function (prop) {
+        console.log(
+          `${this.name} is ${this.age} years old. ${
+            prop === "male" ? `${this.name} is male` : `${this.name} is female`
+          }`
+        );
+      };
+
+      const x = person;
+      x.foo();
+      person.foo();
+      x.foo("male");
+      person.foo("male");
+      x.name = "mixo";
+      x.gender = "male";
+      let deleted = delete x.gender;
+      let deleted1 = delete x.gender;
+      console.log(deleted, deleted1, person["my foo"]); // true
+      console.log(person.hasOwnProperty("age"));
+      person.hobies.map((item) => {
+        document.getElementsByTagName("ol").innerHTML = `<li>${item}</li>`;
+      });
+      console.log("name" in person);
+    </script>
   </body>
 </html>
