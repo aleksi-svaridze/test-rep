@@ -1,9 +1,9 @@
 // 1. დაწერეთ პროგრამა, რომ იპოვოთ მასივის ყველა რიცხვის ჯამი.
-const numberArray = [
-  200, 2000, 500, 1000, 300, 55, 45, 100, 100, 3000, 800, 45,
-];
-const anotherNumberArray = [23, 43, 90, 76, 56, 12, 9];
-const stringsArr = ["cat", "dog", "sheep", "kengoroo", "fox", "crocodile"];
+// const numberArray = [
+//   200, 2000, 500, 1000, 300, 55, 45, 100, 100, 3000, 800, 45,
+// ];
+// const anotherNumberArray = [23, 43, 90, 76, 56, 12, 9];
+// const stringsArr = ["cat", "dog", "sheep", "kengoroo", "fox", "crocodile"];
 // const sumArrayNumber = (arr) => {
 //   // 1 - st option
 //   let result = 0;
@@ -54,9 +54,18 @@ const stringsArr = ["cat", "dog", "sheep", "kengoroo", "fox", "crocodile"];
 //   let sortedArray = arr.sort((a, b) => a - b);
 //   console.log(sortedArray[sortedArray.length - 1]);
 //   console.log(bigest);
+
 // };
 // bigNum(numberArray);
+
+// 4 - th Option
 // console.log(Math.max(...numberArray));
+
+//   5 - th Option
+// function largest(arr) {
+//   arr.sort((a, b) => a - b);
+//   return arr[arr.length - 1];
+// }
 // ===================================================================================================
 
 // 5. დაწერეთ პროგრამა მასივის ყველაზე პატარა ელემენტის მოსაძებნად.
@@ -250,6 +259,26 @@ const stringsArr = ["cat", "dog", "sheep", "kengoroo", "fox", "crocodile"];
 //   console.log(result);
 // }
 // findCommonItemsInArrays(allArray);
+
+// 5-th method
+// function commonElements(arr1, arr2) {
+//   let common = [];
+//   //   for (let i = 0; i < arr1.length; i++) {
+//   //     if (arr2.includes(arr1[i])) {
+//   //       common.push(arr1[i]);
+//   //     }
+//   //   }
+
+//   for (let number of arr1) {
+//     if (arr2.includes(number)) {
+//       common.push(number);
+//     }
+//   }
+
+//   return common;
+// }
+
+// console.log(commonElements([1, 2, 3, 4, 5], [3, 4, 5, 6, 7]));
 // ===================================================================================================
 
 // 15. შექმენით ობიექტი სახელწოდებით car თვისებებით მარკის, მოდელისა და წლისთვის. დაბეჭდეთ ობიექტი კონსოლზე.
