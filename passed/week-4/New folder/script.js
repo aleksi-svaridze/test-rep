@@ -481,6 +481,7 @@ const max = (a, b) => (a > b ? a : b);
 // > Too small!
 // > Guess: 3
 // > Just right!
+
 // function choosingLevel() {
 //   let level = Number(prompt("Level:")); // ვთხოვთ მომხმარებელს აირჩიოს თამაშის დონე
 //   do {
