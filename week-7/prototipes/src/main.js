@@ -132,3 +132,84 @@
 // };
 
 // console.log(whiteRabbit.toString());
+
+// 1. შექმენით ობიექტი სახელად Person,ობიექტს ექნება სახელი,გვარი,ასაკი.
+const Person = {
+    firstName: 'Alex',
+    lastName: 'Svaridze',
+    age: 43
+}
+
+// 2. დაამატეთ ობიექტში  ფუნქცია სახელად  sayHello რომელიც დაპრინტავს ობიექტში 
+// სახელის value-ს.
+Person.printName = function() {
+    console.log(`${this.firstName}`)
+}
+// Person.printName()
+
+// 3. წაშალეთ ასაკის property.
+delete Person.age
+// console.log(Person)
+
+// 4. დაამატეთ ობიექტში job.
+Person.job = 'Web Developer'
+// console.log(Person)
+
+// 5. დაამატეთ ობიექტში ფუნქცია რომელიც დააბრუნებს ობიექტის job-ის სიგრძეს.
+Person.jobLength = function(){
+    console.log(`${this.job} word length is ${this.job.length}`)
+}
+
+Person.hi = function(){console.log('Hi')}
+// Person.jobLength()
+
+// 6. ამის შემდეგ დაპრინტეთ ობიექტში არსებული მეთოდების რაოდენობა.
+function countMethodsInObject(prop) {
+    let countFoos = [];
+
+    for(let key in Person) {
+        if(typeof Person[key] === 'function') {
+            console.log(key)
+            countFoos.push(key)
+        }
+    }
+    return countFoos.length
+}
+console.log(countMethodsInObject(Person))
+
+// 7. დაადგინეთ, აქვს თუ არა ობიექტს gender ფროფერთი. თუ არ აქვს,
+//  მაშინ შექმენით მეთოდი რომელიც იმავე ობიექტს gender ფროფერთის შეუქმნის.
+
+function checkMethod (prop) {
+    if(Object.hasOwn(prop, 'gender')) {
+        return prop.gender
+    } else {
+        return prop.gender = 'male'
+    }
+}
+// console.log(checkMethod(Person))
+
+// 8. გადაუარეთ for ციკლით ობიექტს და დაპრინტეთ ყველა property.
+for(let value in Person){
+    if(typeof Person[value] !== 'function') {
+    console.log(Person[value])
+    }
+}
+
+// 9. გადაუარეთ for ციკლით ობიექტს და დაპრინტეთ ყველა value. 
+for(let key in Person) {
+    console.log(Person[key])
+}
+
+// 10. გვაქვს სახელების მასივი. შექმენით ობიექტი, სადაც key-value წყვილებად იქნება სახელები და 
+// მათი რაოდენობები მასივში.
+const names = ['james', 'sames', 'kates', 'james', 'sames', 'sames'];
+
+
+// 11. შექმენით პროდუქტის პროტოტიპი, რომელსაც ექნება მეთოდი პროდუქტის ფასის საჩვენებლად.
+//  პროტოტიპზე დაყრდნობით შექმენით რამდენიმე პროდუქტის ობიექტი, რომელთაც ექნებათ სახელისა და 
+//  ფასის ფროფერთები.
+// შექმენით კალათის პროტოტიპი რომელზე დაყრდნობითაც შეიქმნება კალათის ობიექტები.
+//  კალათის ობიექტში უნდა გვქონდეს მასივი, სადაც შეგვეძლება პროდუქტის ობიექტების დამატება.
+//  პროტოტიპშივე უნდა იყოს მეთოდი, რომელიც დაამატებს მასივში ახალ პროდუქტებს და მეთოდი, 
+// რომელიც დაითვლის კალათაში არსებული ყველა პროდუქტის ჯამურ ფასს.
